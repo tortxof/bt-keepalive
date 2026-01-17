@@ -30,7 +30,7 @@ func (s *SineWaveReader) Read(buf []byte) (int, error) {
 		s.pos++
 
 		// Convert to 16-bit signed integer
-		val := int16(sample * 32767)
+		val := int16(sample * math.MaxInt16)
 
 		// Write left channel
 		buf[i*4] = byte(val)
